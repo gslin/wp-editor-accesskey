@@ -2,4 +2,4 @@
 
 ## License
 
-See [LICENSE](LICENSE).
+See [LICENSE](LICENSE), we're using GPLv2.
