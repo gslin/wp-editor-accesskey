@@ -1,5 +1,6 @@
 (() => {
     const mappings = {
+        'qt_content_block': 'q',
         'qt_content_code': 'c',
         'qt_content_del': 'd',
         'qt_content_em': 'i',
@@ -9,7 +10,6 @@
         'qt_content_link': 'a',
         'qt_content_more': 't',
         'qt_content_ol': 'o',
-        'qt_content_q': 'q',
         'qt_content_strong': 'b',
         'qt_content_ul': 'u',
     };

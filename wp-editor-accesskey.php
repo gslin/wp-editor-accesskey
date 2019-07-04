@@ -5,7 +5,7 @@ Plugin Name: WP Editor Accesskey
 Plugin URI: https://wiki.gslin.org/wiki/wp-editor-accesskey
 Description: Add accesskeys to editor.
 Author: Gea-Suan Lin
-Version: 0.20190704.0
+Version: 0.20190705.0
 Author URI: https://blog.gslin.org/
 */
 
