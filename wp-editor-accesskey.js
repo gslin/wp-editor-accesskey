@@ -14,9 +14,7 @@
         'qt_content_ul': 'u',
     };
 
-    document.addEventListener('DOMContentLoaded', () => {
-        console.debug('wp-editor-accesskey triggered.');
-
+    let observer = new MutationObserver(() => {
         for (let k of Object.keys(mappings)) {
             let el = document.getElementById(k);
             if (!el) {
@@ -25,6 +23,18 @@
 
             el.setAttribute('accesskey', mappings[k]);
         };
+    });
+
+    let oel = document.getElementsByClassName('wrap');
+    if (0 === oel.length) {
+        return;
+    }
+    oel = oel[0];
+
+    observer.observe(oel, {
+        attributes: false,
+        childList: true,
+        subtree: true,
     });
 
     console.debug('wp-editor-accesskey initialized.');
