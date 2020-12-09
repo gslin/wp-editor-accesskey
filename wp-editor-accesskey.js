@@ -15,6 +15,8 @@
     };
 
     document.addEventListener('DOMContentLoaded', () => {
+        console.debug('wp-editor-accesskey triggered.');
+
         for (let k of Object.keys(mappings)) {
             let el = document.getElementById(k);
             if (!el) {
@@ -24,4 +26,6 @@
             el.setAttribute('accesskey', mappings[k]);
         };
     });
+
+    console.debug('wp-editor-accesskey initialized.');
 })();
