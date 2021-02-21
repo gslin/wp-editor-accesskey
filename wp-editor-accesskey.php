@@ -15,7 +15,7 @@ if (!function_exists('add_action')) {
 
 function add_wp_editor_accesskey() {
     $url = sprintf('%s/wp-editor-accesskey/wp-editor-accesskey.js', plugins_url());
-    wp_register_script('wp-editor-accesskey', $url, [], '0.20201209.1', true);
+    wp_register_script('wp-editor-accesskey', $url, [], '0.20210221.0', true);
     wp_enqueue_script('wp-editor-accesskey');
 }
 
