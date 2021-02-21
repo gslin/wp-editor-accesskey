@@ -41,7 +41,7 @@
             }
         };
 
-        observe.disconnect();
+        observer.disconnect();
     });
 
     let oel = document.getElementsByClassName('wrap');
