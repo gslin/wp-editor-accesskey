@@ -36,7 +36,7 @@
             var src = prompt(quicktagsL10n.enterImageURL, defaultValue), alt;
             if (src) {
                 alt = prompt(quicktagsL10n.enterImageDescription, '');
-                this.tagStart = '<picture><img src="' + src + '" alt="' + alt + '" /></picture>';
+                this.tagStart = '<picture><source type="image/webp" srcset="" /><img src="' + src + '" alt="' + alt + '" /></picture>';
                 window.QTags.TagButton.prototype.callback.call(this, e, c, ed);
             }
         };
