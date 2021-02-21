@@ -15,6 +15,10 @@
     };
 
     let observer = new MutationObserver(() => {
+        if (!document.getElementById('ed_toolbar')) {
+            return;
+        }
+
         for (let k of Object.keys(mappings)) {
             let el = document.getElementById(k);
             if (!el) {
@@ -23,6 +27,21 @@
 
             el.setAttribute('accesskey', mappings[k]);
         };
+
+        // Replace existing ImgButton definition
+        window.QTags.ImgButton.prototype.callback = function(e, c, ed, defaultValue) {
+            if (!defaultValue) {
+                defaultValue = 'https://';
+            }
+            var src = prompt(quicktagsL10n.enterImageURL, defaultValue), alt;
+            if (src) {
+                alt = prompt(quicktagsL10n.enterImageDescription, '');
+                this.tagStart = '<picture><img src="' + src + '" alt="' + alt + '" /></picture>';
+                window.QTags.TagButton.prototype.callback.call(this, e, c, ed);
+            }
+        };
+
+        observe.disconnect();
     });
 
     let oel = document.getElementsByClassName('wrap');
