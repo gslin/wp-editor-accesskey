@@ -22,13 +22,13 @@
         for (let k of Object.keys(mappings)) {
             let el = document.getElementById(k);
             if (!el) {
-                continue;
+                return;
             }
 
             el.setAttribute('accesskey', mappings[k]);
         };
 
-        // Replace existing ImgButton definition
+        // Replace existing ImgButton definition.
         window.QTags.ImgButton.prototype.callback = function(e, c, ed, defaultValue) {
             if (!defaultValue) {
                 defaultValue = 'https://';
